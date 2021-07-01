@@ -35,6 +35,7 @@ namespace shopban.Controllers
             var sanpham = (from sm in data.SANPHAMs select sm).ToList();
             return PartialView(sanpham);
         }
+        
 
     }
 }
