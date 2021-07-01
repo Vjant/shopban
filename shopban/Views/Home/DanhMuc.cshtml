@@ -1,0 +1,14 @@
+﻿@model IEnumerable<shopban.Models.DANHMUC>
+@foreach (var i in Model)
+{
+  
+        <li>
+            <ul>
+                <li class="mega-menu-title"><a href="@Url.Action("SPDanhMuc","Home", new {id = i.MaDM })">@i.TenDanhMuc</a></li>
+                @Html.Action("Loai","Home",new {danhmuc = i.MaDM})
+
+
+            </ul>
+        </li>
+  }
+
