@@ -1,0 +1,6 @@
+﻿@model IEnumerable<shopban.Models.NHACUNGCAP>
+@foreach (var i in Model)
+{
+    <li class="mega-menu-title"><a href="@Url.Action("TenNhaCungCao","Home", new {id= i.MaNCC })">@i.TenNCC</a></li>
+}
+

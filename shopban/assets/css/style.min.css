@@ -1394,7 +1394,7 @@ label {
   -o-transform: rotateX(-75deg);
   -moz-transform: rotateX(-75deg);
   -webkit-transform: rotateX(-75deg);
-  min-width: 230px;
+  min-width: 400px;
   left: auto !important;
   background: #fff;
   box-shadow: 0 0 3.76px 0.24px rgba(0, 0, 0, 0.15);

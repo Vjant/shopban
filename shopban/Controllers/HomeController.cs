@@ -35,7 +35,11 @@ namespace shopban.Controllers
             var sanpham = (from sm in data.SANPHAMs select sm).ToList();
             return PartialView(sanpham);
         }
-        
+        public PartialViewResult NhaCungCap()
+        {
+            var nhacungcap = (from nhacc in data.NHACUNGCAPs select nhacc).ToList();
+            return PartialView(nhacungcap);
+        }
 
     }
 }

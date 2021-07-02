@@ -96,15 +96,20 @@
                     <div class="col-md-7  d-flex">
                         <div class="header-horizontal-menu align-self-center">
                             <ul class="menu-content">
-                                <li class="active menu-dropdown">
-                                    <a href="#">Trang chủ <i></i></a>
-                                </li>
                                 <li class="menu-dropdown">
                                     <a href="#">Sản phẩm <i class="ion-ios-arrow-down"></i></a>
                                     <ul class="mega-menu-wrap">
-                                       @Html.Action("DanhMuc","Home")          
+                                        @Html.Action("DanhMuc", "Home")
                                     </ul>
                                 </li>
+                                <li class="menu-dropdown">
+                                    <a href="#">Nhà Cung Cấp <i class="ion-ios-arrow-down"></i></a>
+                                    <ul class="main-sub-menu">
+                                        @Html.Action("NhaCungCap", "Home")
+                                    </ul>
+                                </li>
+                                
+
                                 <li class="menu-dropdown">
                                     <a href="#">Giới thiệu <i class="ion-ios-arrow-down"></i></a>
                                     <ul class="main-sub-menu">
