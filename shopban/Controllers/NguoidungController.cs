@@ -51,9 +51,13 @@ namespace shopban.Controllers
             {
                 ViewData["Loi5"] = "phải nhập email";
             }
+            if (String.IsNullOrEmpty(diachi))
+            {
+                ViewData["Loi6"] = "Phải nhập địa chỉ";
+            }
             if (String.IsNullOrEmpty(dienthoai))
             {
-                ViewData["Loi6"] = "phải nhập SĐT";
+                ViewData["Loi7"] = "phải nhập SĐT";
             }
             else
             {
