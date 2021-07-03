@@ -1,6 +1,14 @@
 ﻿@model IEnumerable<shopban.Models.SANPHAM>
-@foreach (var i in Model)
-{
+@{
+    ViewBag.Title = "SPLoai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="arrival-slider slider-nav-style-1">
+
+    @foreach (var i in Model)
+    {
+
+        <!-- Tab Slider Start -->
     <div class="arrval-slider-item">
         <article class="list-product text-left">
             <div class="product-inner">
@@ -45,5 +53,10 @@
             </div>
         </article>
     </div>
+            <!-- Tab Slider End -->
+            }
+       
+    </div>
 
-}
+
+
