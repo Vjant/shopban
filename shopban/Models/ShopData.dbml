@@ -10,22 +10,6 @@
       <Association Name="SANPHAM_CHITIETDONTHANG" Member="SANPHAM" ThisKey="MaSP" OtherKey="MaSP" Type="SANPHAM" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.LOAI" Member="LOAIs">
-    <Type Name="LOAI">
-      <Column Name="MaL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="MaDM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="LOAI_SANPHAM" Member="SANPHAMs" ThisKey="MaL" OtherKey="MaL" Type="SANPHAM" />
-      <Association Name="DANHMUC_LOAI" Member="DANHMUC" ThisKey="MaDM" OtherKey="MaDM" Type="DANHMUC" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.DANHMUC" Member="DANHMUCs">
-    <Type Name="DANHMUC">
-      <Column Name="MaDM" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="TenDanhMuc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="DANHMUC_LOAI" Member="LOAIs" ThisKey="MaDM" OtherKey="MaDM" Type="LOAI" />
-    </Type>
-  </Table>
   <Table Name="dbo.DONDATHANG" Member="DONDATHANGs">
     <Type Name="DONDATHANG">
       <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -36,6 +20,13 @@
       <Column Name="MaKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Association Name="DONDATHANG_CHITIETDONTHANG" Member="CHITIETDONTHANGs" ThisKey="MaDonHang" OtherKey="MaDonHang" Type="CHITIETDONTHANG" />
       <Association Name="KHACHHANG_DONDATHANG" Member="KHACHHANG" ThisKey="MaKH" OtherKey="MaKH" Type="KHACHHANG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DANHMUC" Member="DANHMUCs">
+    <Type Name="DANHMUC">
+      <Column Name="MaDM" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenDanhMuc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="DANHMUC_LOAI" Member="LOAIs" ThisKey="MaDM" OtherKey="MaDM" Type="LOAI" />
     </Type>
   </Table>
   <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
@@ -58,6 +49,15 @@
       <Column Name="Diachi" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
       <Column Name="DienThoai" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Association Name="NHACUNGCAP_SANPHAM" Member="SANPHAMs" ThisKey="MaNCC" OtherKey="MaNCC" Type="SANPHAM" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAI" Member="LOAIs">
+    <Type Name="LOAI">
+      <Column Name="MaL" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaDM" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenLoai" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="LOAI_SANPHAM" Member="SANPHAMs" ThisKey="MaL" OtherKey="MaL" Type="SANPHAM" />
+      <Association Name="DANHMUC_LOAI" Member="DANHMUC" ThisKey="MaDM" OtherKey="MaDM" Type="DANHMUC" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.SANPHAM" Member="SANPHAMs">
