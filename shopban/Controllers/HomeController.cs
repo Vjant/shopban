@@ -41,5 +41,8 @@ namespace shopban.Controllers
             return PartialView(nhacungcap);
         }
 
+       
+
+
     }
 }
