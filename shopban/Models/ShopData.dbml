@@ -1,5 +1,10 @@
+<<<<<<< HEAD
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="shop" Class="ShopDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-QK598OG;Initial Catalog=shop;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="shopConnectionString" Provider="System.Data.SqlClient" />
+=======
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ShopPet" Class="ShopDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-QEN4LJI\LOCAL;Initial Catalog=ShopPet;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="ShopPetConnectionString2" Provider="System.Data.SqlClient" />
+>>>>>>> ab80bfced41f29e6c3af95ea2b1dd4afa4e7a132
   <Table Name="dbo.CHITIETDONTHANG" Member="CHITIETDONTHANGs">
     <Type Name="CHITIETDONTHANG">
       <Column Name="MaDonHang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />

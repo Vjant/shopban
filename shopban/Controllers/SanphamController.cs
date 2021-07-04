@@ -25,6 +25,10 @@ namespace shopban.Controllers
             var sp = from s in data.SANPHAMs where s.MaL == id select s;
             return View(sp);
         }
-
+        public ActionResult chitietsanpham(int id)
+        {
+            var sp = from s in data.SANPHAMs where s.MaSP == id select s;
+            return View(sp);
+        }
     }
 }

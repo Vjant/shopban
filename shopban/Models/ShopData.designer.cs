@@ -22,7 +22,11 @@ namespace shopban.Models
 	using System;
 	
 	
+<<<<<<< HEAD
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="shop")]
+=======
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="ShopPet")]
+>>>>>>> ab80bfced41f29e6c3af95ea2b1dd4afa4e7a132
 	public partial class ShopDataDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -54,7 +58,11 @@ namespace shopban.Models
     #endregion
 		
 		public ShopDataDataContext() : 
+<<<<<<< HEAD
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["shopConnectionString"].ConnectionString, mappingSource)
+=======
 				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["ShopPetConnectionString2"].ConnectionString, mappingSource)
+>>>>>>> ab80bfced41f29e6c3af95ea2b1dd4afa4e7a132
 		{
 			OnCreated();
 		}

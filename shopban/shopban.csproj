@@ -321,6 +321,7 @@
     <Content Include="Views\Home\NhaCungCap.cshtml" />
     <Content Include="Views\Sanpham\TenNhaCungCap.cshtml" />
     <Content Include="Views\Sanpham\SPLoai.cshtml" />
+    <Content Include="Views\Sanpham\chitietsanpham.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
