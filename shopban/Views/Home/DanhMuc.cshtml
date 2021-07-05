@@ -3,7 +3,7 @@
 {
         <li>
             <ul>
-                <li class="mega-menu-title"><a href="@Url.Action("SPDanhMuc","Home", new {id = i.MaDM })">@i.TenDanhMuc</a></li>
+                <li class="mega-menu-title"><a href="@Url.Action("SPDanhMuc","SanPham", new {id = i.MaDM })">@i.TenDanhMuc</a></li>
                 @Html.Action("Loai","Home",new {danhmuc = i.MaDM})
 
 

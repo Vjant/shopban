@@ -3,92 +3,245 @@
     ViewBag.Title = "chitietsanpham";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-                    @foreach (var i in Model)
-                    {
-                        <div class="col-md-6 col-sm-12 col-xs-12 mb-lm-100px mb-sm-30px">
-                            <div class="quickview-wrapper">
-                                <!-- slider -->
-                                <div class="gallery-top">
-                                    <div class="single-slide">
-                                        <img class="img-responsive m-auto" src="@i.Anhbia" alt="">
+@foreach (var i in Model)
+{
+    <div class="product-details-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="product-details-img product-details-tab position-relative">
+                        <!--ảnh to ở trên -->
+                        <div class="zoompro-wrap zoompro-2">
+                            <div class="zoompro-border zoompro-span">
+                                <img class="zoompro w-100" src="@i.Anhbia" data-zoom-image="@i.Anhbia" alt="" />
+                            </div>
+
+                        </div>
+                        <!--ảnh nhỏ ở dưới -->
+                        <div id="gallery" class="product-dec-slider-2">
+                            <div class="single-slide-item">
+                                <img class="img-responsive" data-image="@i.Anhbia" data-zoom-image="@i.Anhbia" src="@i.Anhbia" alt="" />
+                            </div>
+
+                        </div>
+                        <ul class="product-flag">
+                            <li class="new">New</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="product-details-content">
+                        <h2>@i.TenSP</h2>
+                        @*<p class="reference">Reference:<span> demo_17</span></p>
+                            <div class="pro-details-rating-wrap">
+                                <div class="rating-product">
+                                    <i class="ion-android-star"></i>
+                                    <i class="ion-android-star"></i>
+                                    <i class="ion-android-star"></i>
+                                    <i class="ion-android-star"></i>
+                                    <i class="ion-android-star"></i>
+                                </div>
+                                <span class="read-review"><a class="reviews" href="#">Read reviews (2)</a></span>
+                                <span class="write-review read-review"><a class="reviews" href="#">Write a review</a></span>
+                            </div>*@
+                        <div class="pricing-meta">
+                            <ul>
+                                @*<li class="old-price">$23.90</li>*@
+                                <li class="cuttent-price">@i.Giaban</li>
+                                @*<li class="discount-flag">save 10%</li>*@
+                            </ul>
+                        </div>
+                        <div class="pro-details-list">
+                            <ul>
+                                <li>@i.Mota</li>
+
+                            </ul>
+                        </div>
+                        <div class="pro-details-quality mt-0px">
+                            <div class="cart-plus-minus">
+                                <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
+                            </div>
+                            <div class="pro-details-cart btn-hover">
+                                <a href="#">  Add To Cart</a>
+                            </div>
+                        </div>
+                        <div class="pro-details-wish-com">
+                            <div class="pro-details-wishlist">
+                                <a href="#"><i class="las la-heart"></i></a>
+                            </div>
+                            <div class="pro-details-compare">
+                                <a href="#"><i class="las la-sync"></i></a>
+                            </div>
+                        </div>
+                        <div class="pro-details-social-info">
+                            <span>Share</span>
+                            <div class="social-info">
+                                <ul>
+                                    <li>
+                                        <a title="Facebook" href="#"><i class="ion-social-facebook"></i></a>
+                                    </li>
+                                    <li>
+                                        <a title="Twitter" href="#"><i class="ion-social-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a title="Google+" href="#"><i class="ion-social-google"></i></a>
+                                    </li>
+                                    <li>
+                                        <a title="Instagram" href="#"><i class="ion-social-instagram"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="pro-details-policy">
+                            <ul>
+                                <li><img src="assets/images/icons/policy.png" alt="" /><span>Security Policy (Edit With Customer Reassurance Module)</span></li>
+                                <li><img src="assets/images/icons/policy-2.png" alt="" /><span>Delivery Policy (Edit With Customer Reassurance Module)</span></li>
+                                <li><img src="assets/images/icons/policy-3.png" alt="" /><span>Return Policy (Edit With Customer Reassurance Module)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Shop details Area End -->
+    <!-- product details description area start -->
+    <div class="description-review-area mb-50px bg-light-gray-3 ptb-50px">
+        <div class="container">
+            <div class="description-review-wrapper">
+                <div class="description-review-topbar nav">
+                    <a data-toggle="tab" href="#des-details1">Description</a>
+
+                    <a data-toggle="tab" href="#des-details3">Reviews (2)</a>
+                </div>
+                <div class="tab-content description-review-bottom">
+
+                    <div id="des-details1" class="tab-pane">
+                        <div class="product-description-wrapper">
+                            <p>@i.Mota</p>
+                        </div>
+                    </div>
+                    <div id="des-details3" class="tab-pane">
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="review-wrapper">
+                                    <div class="single-review">
+                                        <div class="review-img">
+                                            <img src="assets/images/review-image/1.png" alt="" />
+                                        </div>
+                                        <div class="review-content">
+                                            <div class="review-top-wrap">
+                                                <div class="review-left">
+                                                    <div class="review-name">
+                                                        <h4>White Lewis</h4>
+                                                    </div>
+                                                    <div class="rating-product">
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="review-left">
+                                                    <a href="#">Reply</a>
+                                                </div>
+                                            </div>
+                                            <div class="review-bottom">
+                                                <p>
+                                                    Vestibulum ante ipsum primis aucibus orci luctustrices posuere cubilia Curae Suspendisse viverra ed viverra. Mauris ullarper euismod vehicula. Phasellus quam nisi, congue id nulla.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="single-review child-review">
+                                        <div class="review-img">
+                                            <img src="assets/images/review-image/2.png" alt="" />
+                                        </div>
+                                        <div class="review-content">
+                                            <div class="review-top-wrap">
+                                                <div class="review-left">
+                                                    <div class="review-name">
+                                                        <h4>White Lewis</h4>
+                                                    </div>
+                                                    <div class="rating-product">
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                        <i class="ion-android-star"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="review-left">
+                                                    <a href="#">Reply</a>
+                                                </div>
+                                            </div>
+                                            <div class="review-bottom">
+                                                <p>Vestibulum ante ipsum primis aucibus orci luctustrices posuere cubilia Curae Sus pen disse viverra ed viverra. Mauris ullarper euismod vehicula.</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class=" gallery-thumbs">
-                                    <div class="single-slide">
-                                        <img class="img-responsive m-auto" src="@i.Anhbia" alt="">
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="ratting-form-wrapper pl-50">
+                                    <h3>Add a Review</h3>
+                                    <div class="ratting-form">
+                                        <form action="#">
+                                            <div class="star-box">
+                                                <span>Your rating:</span>
+                                                <div class="rating-product">
+                                                    <i class="ion-android-star"></i>
+                                                    <i class="ion-android-star"></i>
+                                                    <i class="ion-android-star"></i>
+                                                    <i class="ion-android-star"></i>
+                                                    <i class="ion-android-star"></i>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="rating-form-style mb-10">
+                                                        <input placeholder="Name" type="text" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="rating-form-style mb-10">
+                                                        <input placeholder="Email" type="email" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <div class="rating-form-style form-submit">
+                                                        <textarea name="Your Review" placeholder="Message"></textarea>
+                                                        <input type="submit" value="Submit" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="product-details-content quickview-content">
-                                <h2>@i.TenSP</h2>
-                                @*<p class="reference">Reference:<span> demo_17</span></p>*@
-                                <!--so sao va luot danh gia-->
-                                @*<div class="pro-details-rating-wrap">
-                                        <div class="rating-product">
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                            <i class="ion-android-star"></i>
-                                        </div>
-                                        <span class="read-review"><a class="reviews" href="#">Read reviews (1)</a></span>
-                                    </div>*@
-                                <div class="pricing-meta">
-                                    <ul>
-                                        <li class="not-cut">@i.Giaban</li>
-                                    </ul>
-                                </div>
-                                <p class="quickview-para">@i.Mota</p>
-                                <div class="pro-details-size-color">
-                                    <div class="pro-details-color-wrap">
-                                        <span>Color</span>
-                                        <div class="pro-details-color-content">
-                                            <ul>
-                                                <li class="blue"></li>
-                                                <li class="maroon active"></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="pro-details-quality">
-                                    <div class="cart-plus-minus">
-                                        <input class="cart-plus-minus-box" type="text" name="qtybutton" value="1" />
-                                    </div>
-                                    <div class="pro-details-cart btn-hover">
-                                        <a href="#"> + Add To Cart</a>
-                                    </div>
-                                </div>
-                                <div class="pro-details-wish-com">
-                                    <div class="pro-details-wishlist">
-                                        <a href="wishlist.html"><i class="las la-heart"></i></a>
-                                    </div>
-                                    <div class="pro-details-compare">
-                                        <a href="compare.html"><i class="las la-sync"></i></a>
-                                    </div>
-                                </div>
-                                <div class="pro-details-social-info">
-                                    <span>Share</span>
-                                    <div class="social-info">
-                                        <ul>
-                                            <li>
-                                                <a href="#"><i class="ion-social-facebook"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="ion-social-twitter"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="ion-social-google"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="ion-social-instagram"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="related-item">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title">
+                    <h2>You might also like</h2>
+                </div>
+            </div>
+        </div>
+        <!-- Tab Slider Start -->
+        <div class="arrival-slider slider-nav-style-1">
+           @Html.Action("SanPhamBanChay", "Home");
+        </div>
+        <!-- Tab Slider End -->
+    </div>
+</div>
 
 

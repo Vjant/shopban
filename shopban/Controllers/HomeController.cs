@@ -25,11 +25,7 @@ namespace shopban.Controllers
             var loai = (from l in data.LOAIs where l.MaDM == danhmuc select l).ToList();
             return PartialView(loai);
         }
-        public PartialViewResult ListDanhMuc()
-        {
-            var danhmuc = (from dm in data.DANHMUCs select dm).ToList();
-            return PartialView(danhmuc);
-        }
+       
         public PartialViewResult SanPhamBanChay()
         {
             var sanpham = (from sm in data.SANPHAMs select sm).ToList();

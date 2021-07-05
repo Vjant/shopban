@@ -1,8 +1,9 @@
-﻿@model IEnumerable<shopban.Models.SANPHAM>
+﻿@model IEnumerable<shopban.Models.SanPham_Loai>
 @{
-    ViewBag.Title = "SPLoai";
+    ViewBag.Title = "SPDanhMuc";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="shop-category-area">
     <div class="container">
         <div class="row">
@@ -12,7 +13,7 @@
                         <div id="shop-1" class="tab-pane active">
                             <div class="row">
                                 @foreach (var i in Model)
-                                {
+                                {                                
                                     <div class=" col-md-4 col-sm-6 " style="margin-top: 10px; margin-bottom: 20px;">
                                         <div class="slider-single-item">
                                             <!-- Single Item -->
@@ -32,7 +33,7 @@
                                                                     <a href="compare.html" title="Add to compare"><i class="las la-sync"></i></a>
                                                                 </li>
                                                                 <li>
-                                                                    <a class="quick_view" href="@Url.Action("chitietsanpham","Sanpham",new {id = i.MaSP })" >
+                                                                    <a class="quick_view" href="@Url.Action("chitietsanpham","Sanpham",new {id = i.MaSp })">
                                                                         <i class="las la-search"></i>
                                                                     </a>
                                                                 </li>
@@ -40,14 +41,14 @@
                                                         </div>
                                                         <ul class="product-flag">
                                                             <li class="new">New</li>
-                                                           @* <li class="new discount">-5%</li>*@
+                                                            @* <li class="new discount">-5%</li>*@
                                                         </ul>
                                                     </div>
                                                     <div class="product-decs">
-                                                        <h2><a href="@Url.Action("chitietsanpham","Sanpham",new {id = i.MaSP })" class="product-link">@i.TenSP</a></h2>
+                                                        <h2><a href="@Url.Action("chitietsanpham","Sanpham",new {id = i.MaSp })" class="product-link">@i.TenSp</a></h2>
                                                         <div class="pricing-meta">
                                                             <ul>
-                                                                <li class="old-price">@i.Giaban</li>
+                                                                <li class="old-price">@i.Gia</li>
                                                                 @*<li class="current-price">$30.00</li>*@
                                                             </ul>
                                                         </div>

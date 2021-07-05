@@ -127,7 +127,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DanhMuc_Loai.cs" />
+    <Compile Include="Models\SanPham_Loai.cs" />
     <Compile Include="Models\ShopData.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -311,7 +311,6 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\DanhMuc.cshtml" />
     <Content Include="Views\Home\Loai.cshtml" />
-    <Content Include="Views\Home\ListDanhMuc.cshtml" />
     <Content Include="Views\Home\SanPhamBanChay.cshtml" />
     <Content Include="Views\Nguoidung\Dangky.cshtml" />
     <Content Include="Views\Nguoidung\Dangnhap.cshtml" />
@@ -319,6 +318,7 @@
     <Content Include="Views\Sanpham\TenNhaCungCap.cshtml" />
     <Content Include="Views\Sanpham\SPLoai.cshtml" />
     <Content Include="Views\Sanpham\chitietsanpham.cshtml" />
+    <Content Include="Views\Sanpham\SPDanhMuc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

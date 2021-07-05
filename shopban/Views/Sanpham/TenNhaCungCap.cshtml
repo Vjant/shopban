@@ -32,7 +32,7 @@
                                                                     <a href="compare.html" title="Add to compare"><i class="las la-sync"></i></a>
                                                                 </li>
                                                                 <li>
-                                                                    <a class="quick_view" href="#" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
+                                                                    <a class="quick_view" href="@Url.Action("chitietsanpham","Sanpham",new {id = i.MaSP })" data-link-action="quickview" title="Quick view" data-toggle="modal" data-target="#exampleModal">
                                                                         <i class="las la-search"></i>
                                                                     </a>
                                                                 </li>
@@ -44,7 +44,7 @@
                                                         </ul>
                                                     </div>
                                                     <div class="product-decs">
-                                                        <h2><a href="single-product.html" class="product-link">@i.TenSP</a></h2>
+                                                        <h2><a href="@Url.Action("chitietsanpham","Sanpham",new {id = i.MaSP })" class="product-link">@i.TenSP</a></h2>
                                                         <div class="pricing-meta">
                                                             <ul>
                                                                 <li class="old-price">@i.Giaban</li>
