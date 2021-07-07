@@ -17,6 +17,10 @@ namespace shopban.Controllers
         {
             return View();
         }
+        public ActionResult Blog()
+        {
+            return View();
+        }
         ShopDataDataContext data = new ShopDataDataContext();
 
         public PartialViewResult DanhMuc()

@@ -404,6 +404,7 @@
     <Content Include="Views\Sanpham\chitietsanpham.cshtml" />
     <Content Include="Views\Sanpham\SPDanhMuc.cshtml" />
     <Content Include="Views\Home\ThongTinCuaHang.cshtml" />
+    <Content Include="Views\Home\Blog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
