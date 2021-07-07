@@ -22,7 +22,7 @@ namespace shopban.Models
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="shop")]
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="Shop")]
 	public partial class ShopDataDataContext : System.Data.Linq.DataContext
 	{
 		
@@ -54,7 +54,7 @@ namespace shopban.Models
     #endregion
 		
 		public ShopDataDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["shopConnectionString"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["ShopConnectionString1"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}

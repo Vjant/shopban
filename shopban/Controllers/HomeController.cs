@@ -13,6 +13,10 @@ namespace shopban.Controllers
         {
             return View();
         }
+        public ActionResult ThongTinCuaHang()
+        {
+            return View();
+        }
         ShopDataDataContext data = new ShopDataDataContext();
 
         public PartialViewResult DanhMuc()
@@ -36,9 +40,5 @@ namespace shopban.Controllers
             var nhacungcap = (from nhacc in data.NHACUNGCAPs select nhacc).ToList();
             return PartialView(nhacungcap);
         }
-
-       
-
-
     }
 }

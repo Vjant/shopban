@@ -105,5 +105,9 @@ namespace shopban.Controllers
             }
             return View();
         }
+        public ActionResult ThongTinVeChungToi()
+        {
+            return View();
+        }
     }
 }
