@@ -1,5 +1,5 @@
 ﻿use master
-Drop Database Shop
+Drop Database Tintuc
 GO
 create database Shop
 GO
