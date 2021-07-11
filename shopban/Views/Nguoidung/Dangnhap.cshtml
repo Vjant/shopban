@@ -8,70 +8,43 @@
     ViewBag.Title = "Dangnhap";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<br/>
 <h5 style="color:red; text-align:center"> @ViewBag.Thongbao</h5>
-t<table align="center">
-    <h4 style="text-align:center">ĐĂNG NHẬP</h4>
-    @using (Html.BeginForm())
-    {
-        @Html.ValidationSummary(true)
-        <tr style="height:50px">
-            <td> Tên đăng nhập:</td>
-            <td>
-                @Html.TextBox("TenDn")
-                @ViewData["Loi1"]
-            </td>
-        </tr>
-        <tr style="height:50px">
-            <td align="right"> Mật khẩu:</td>
-            <td>
-                @Html.Password("Matkhau")
-                @ViewData["Loi2"]
-            </td>
-        </tr>
-        <tr style="margin:50px">
-            <td>
-                <button type="submit"><span>Đăng nhập</span></button>
-            </td>
-        </tr>
-    }
+
+<h4 style="text-align:center">ĐĂNG NHẬP</h4>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<table align="center">
+    <tr style="height:50px;">
+        <td> Tên đăng nhập:</td>
+        <td style="        border: 1px solid #ebebeb;width: 500px">
+            @Html.TextBox("TenDn")
+        </td>
+        <td>
+            @ViewData["Loi1"]
+        </td>
+    </tr>
+    <tr style="height:50px">
+        <td align="right"> Mật khẩu:</td>
+        <td style="border: 1px solid #ebebeb;">
+            @Html.Password("Matkhau")
+        </td>
+        <td>
+            @ViewData["Loi2"]
+        </td>
+    </tr>
+
+    <tr style="height:50px">
+        <td></td>
+        <td style="border: 1px solid #ebebeb;text-align:center  ">
+            <button type="submit"><span>Đăng nhập</span></button>
+        </td>
+    </tr>
+
 </table>
-@*<div class="login-register-area pb-100px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 col-md-12 ml-auto mr-auto">
-                <div class="login-register-wrapper">
-                    <div class="login-register-tab-list nav">
-                        <a class="active" data-toggle="tab" href="#lg1">
-                            <br />
-                            <h4>Đăng nhập</h4>
-                        </a>
-                    </div>
-                    <div class="tab-content">
-                        <div id="lg1" class="tab-pane active">
-                            <div class="login-form-container">
-                                <div class="login-register-form">
-                                    <form action="#" method="post">
-                                        <td>Tên đăng nhập</td>
-                                        @Html.TextBox("TenDN")
-                                        @ViewData["Loi1"]
-                                        <td>Mật khẩu</td>
-                                        @Html.Password("Matkhau")
-                                        @ViewData["Loi2"]
-                                        <div class="button-box">
-                                            <div class="login-toggle-btn">
-                                            </div>
-                                            <button type="submit"><span>Đăng nhập</span></button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>*@
+}
+
 
 
 

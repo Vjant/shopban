@@ -41,24 +41,29 @@ namespace shopban.Controllers
             }
             else if (String.IsNullOrEmpty(matkhau))
             {
-                ViewData["Loi3"] = "Phải nhập mạt khẩu";
+                ViewData["Loi3"] = "Phải nhập mật khẩu";
             }
             else if (String.IsNullOrEmpty(nhaplaimk))
             {
                 ViewData["Loi4"] = "phải nhập lại mật khẩu";
             }
-            if (String.IsNullOrEmpty(email))
+            else if (matkhau != nhaplaimk)
+            {
+                ViewData["Loi8"] = "nhập lại sai mật khẩu";
+            }
+            else if (String.IsNullOrEmpty(email))
             {
                 ViewData["Loi5"] = "phải nhập email";
             }
-            if (String.IsNullOrEmpty(diachi))
+            else if (String.IsNullOrEmpty(diachi))
             {
                 ViewData["Loi6"] = "Phải nhập địa chỉ";
             }
-            if (String.IsNullOrEmpty(dienthoai))
+            else if (String.IsNullOrEmpty(dienthoai))
             {
                 ViewData["Loi7"] = "phải nhập SĐT";
             }
+
             else
             {
                 kh.HoTen = hoten;
@@ -70,7 +75,7 @@ namespace shopban.Controllers
                 kh.Ngaysinh = DateTime.Parse(ngaysinh);
                 data.KHACHHANGs.InsertOnSubmit(kh);
                 data.SubmitChanges();
-                return RedirectToAction("Dangnhap");
+                return RedirectToAction("Dangnhap","Nguoidung");
             }
             return this.Dangky();
         }
@@ -97,8 +102,9 @@ namespace shopban.Controllers
                 KHACHHANG kh = data.KHACHHANGs.SingleOrDefault(n => n.Taikhoan == tendn && n.Matkhau == matkhau);
                 if (kh != null)
                 {
-                    ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
+                    //ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
                     Session["Taikhoan"] = kh;
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                     ViewBag.Thongbao = "Tên đăng nhập hoặc mật khẩu không đúng";

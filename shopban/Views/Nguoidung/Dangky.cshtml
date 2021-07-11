@@ -8,98 +8,91 @@
     ViewBag.Title = "Dangky";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="login-register-area pb-100px">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-7 col-md-12 ml-auto mr-auto">
-                <div class="login-register-wrapper">
-                    <div class="login-register-tab-list nav">
-                        <a data-toggle="tab" href="#lg2">
+
+                        <a align="center">
                             <br />
                             <h4>Đăng ký</h4>
                         </a>
-                    </div>
-                    <div id="lg2" class="tab-pane">
-                        <div class="login-form-container">
-                            <div class="login-register-form">
-                                <form action="#" method="post">
-                                    @using (Html.BeginForm())
-                                    {
-                                        @Html.ValidationSummary(true)
-                                        <tr style="height:40px">
-                                            <td> Họ Tên Khách Hàng:</td>
-                                            <td>
-                                                @Html.TextBox("HotenKH")
-                                                @ViewData["loi1"]
-                                            </td>
-                                        </tr>
-                                        <tr style="height:40px">
-                                            <td> Tên đăng nhập:</td>
-                                            <td>
-                                                @Html.TextBox("TenDN")
-                                                @ViewData["loi2"]
-                                            </td>
-                                        </tr>
-                                        <tr style="height:40px">
-                                            <td> Mật khẩu:</td>
-                                            <td>
-                                                @Html.Password("Matkhau")
-                                                @ViewData["loi3"]
-                                            </td>
-                                        </tr>
-                                        <tr style="height:40px">
-                                            <td> Nhập lại mật khẩu:</td>
-                                            <td>
-                                                @Html.Password("nhaplaiMK")
-                                                @ViewData["loi4"]
-                                            </td>
-                                        </tr>
-                                        <tr style="height:40px">
-                                            <td> Địa chỉ Email</td>
-                                            <td>
-                                                @Html.TextBox("Email")
-                                                @ViewData["loi5"]
-                                            </td>
-                                        </tr>
-                                        <tr style="height:40px">
-                                            <td> Địa chỉ</td>
-                                            <td>
-                                                @Html.TextBox("Diachi")
-                                                @ViewData["loi6"]
-                                            </td>
-                                        </tr>
-                                        <tr style="height:40px">
-                                            <td> Điện thoại</td>
-                                            <td>
-                                                @Html.TextBox("Dienthoai")
-                                                @ViewData["loi7"]
-                                            </td>
-                                        </tr>
-                                        <tr style="height:40px">
-                                            <td> Ngày sinh</td>
-                                            <td>
-                                                <input type="date" name="Ngaysinh" />
-                                            </td>
-                                        </tr>
-                                        <tr style="height:40px">
-                                            <td> </td>
-                                            <td>
-                                                <input type="submit" value="Đăng ký" />
-                                            </td>
-                                        </tr>
-                                    }
-                                    <div class="button-box">
-                                        <button type="submit"><span>Đăng ký</span></button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
+                    
+                    <table align="center">
+                        @using (Html.BeginForm())
+                        {
+                            @Html.ValidationSummary(true)
+                        <tr style="height:40px;">
+                            <td> Họ Tên Khách Hàng:</td>
+                            <td style="border: 1px solid #ebebeb;width:500px">
+                                @Html.TextBox("HotenKH")
+                            </td>
+                            <td>@ViewData["loi1"]</td>
+                            
+                        </tr>
+                            <tr style="height:40px">
+                                <td> Tên đăng nhập:</td>
+                                <td style="border: 1px solid #ebebeb;width:500px">
+                                    @Html.TextBox("TenDN")</td><td>
+                                    @ViewData["loi2"]
+                                </td>
+                            </tr>
+                            <tr style="height:40px">
+                                <td> Mật khẩu:</td>
+                                <td style="border: 1px solid #ebebeb;width:500px">
+                                    @Html.Password("Matkhau")
+                                </td>
+                                <td>
+                                    @ViewData["loi3"]
+                                </td>
+                            </tr>
+                            <tr style="height:40px">
+                                <td> Nhập lại mật khẩu:</td>
+                                <td style="border: 1px solid #ebebeb;width:500px">
+                                    @Html.Password("nhaplaiMK")
+                                </td>
+                                <td>
+                                    @ViewData["loi4"]
+                                    @ViewData["loi8"]
+                                </td>
+                            </tr>
+                            <tr style="height:40px">
+                                <td> Địa chỉ Email</td>
+                                <td style="border: 1px solid #ebebeb;width:500px">
+                                    
+                                    <input type="email" name="Email" />
+                                </td>
+                                <td>
+                                    @ViewData["loi5"]
+                                </td>
+                            </tr>
+                            <tr style="height:40px">
+                                <td> Địa chỉ</td>
+                                <td style="border: 1px solid #ebebeb;width:500px">
+                                    @Html.TextBox("Diachi")
+                                </td>
+                                <td>
+                                    @ViewData["loi6"]
+                                </td>
+                            </tr>
+                            <tr style="height:40px">
+                                <td> Điện thoại</td>
+                                <td style="border: 1px solid #ebebeb;width:500px">
+                                    @Html.TextBox("Dienthoai")
+                                </td>
+                                <td>
+                                    @ViewData["loi7"]
+                                </td>
+                            </tr>
+                            <tr style="height:40px">
+                                <td> Ngày sinh</td>
+                                <td style="border: 1px solid #ebebeb;width:500px">
+                                    <input type="date" name="Ngaysinh" />
+                                </td>
+                            </tr>
+                            <tr style="height: 40px;">
+                                <td> </td>
+                                <td style="border: 1px solid #ebebeb; text-align:center ">
+                                    <input type="submit" value="Đăng ký" />
+                                </td>
+                            </tr>
+                        }
+                    </table>
+                                    
+                         
