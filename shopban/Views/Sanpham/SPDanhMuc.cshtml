@@ -20,7 +20,7 @@
                                             <article class="list-product text-left">
                                                 <div class="product-inner">
                                                     <div class="img-block">
-                                                        <a href="single-product.html" class="thumbnail">
+                                                        <a href="@Url.Action("chitietsanpham","Sanpham",new {id = i.MaSp })" class="thumbnail">
                                                             <img class="first-img" src="@i.Anhbia" alt="" />
                                                             <img class="second-img" src="@i.Anhbia" alt="" />
                                                         </a>
@@ -54,7 +54,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="cart-btn">
-                                                        <a href="#" class="add-to-curt" title="Add to cart"><i class="las la-baby-carriage"></i></a>
+                                                        <a href="@Url.Action("ThemGiohang", "GioHang", new { @iMaSp = i.MaSp , @strURL=Request.Url.ToString() })" class="add-to-curt" title="Add to cart"><i class="las la-baby-carriage"></i></a>
                                                     </div>
                                                 </div>
                                             </article>

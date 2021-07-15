@@ -40,7 +40,7 @@
                     </div>
                 </div>
                 <div class="cart-btn">
-                    <a href="#" class="add-to-curt" title="Add to cart"><i class="las la-baby-carriage"></i></a>
+                    <a href="@Url.Action("ThemGiohang", "GioHang", new { @iMaSp = i.MaSP , @strURL=Request.Url.ToString() })" class="add-to-curt" title="Add to cart"><i class="las la-baby-carriage"></i></a>
                 </div>
             </div>
         </article>

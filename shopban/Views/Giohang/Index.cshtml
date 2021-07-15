@@ -1,0 +1,43 @@
+﻿@using shopban.Models
+@model List<Giohang>
+<div id="offcanvas-cart" class="offcanvas offcanvas-cart">
+    <div class="inner">
+        <div class="head">
+            <span class="title">Cart</span>
+            <button class="offcanvas-close">×</button>
+        </div>
+        <div class="body customScroll">
+            <ul class="minicart-product-list">
+                @foreach (var item in Model)
+                {
+                    <li>
+                        <a href="@Url.Action("chitietsanpham","Sanpham",new {id = @item.iMaSp })" class="image"><img src="@item.sAnhbia" alt="Cart product Image"></a>
+                        <div class="content">
+                            <a href="@Url.Action("chitietsanpham","Sanpham",new {id = @item.iMaSp })" class="title">@item.sTenSp</a>
+                            <span class="quantity-price">@item.iSoluong X <span class="amount">@item.dDongia</span></span>
+                            <a href="#" class="remove">×</a>
+                        </div>
+                    </li>
+                }
+            </ul>          
+        </div>
+        <div class="foot">
+            <div class="sub-total">
+                <table class="table">
+                    <tbody>
+                        
+                        <tr>
+                            <td class="text-left">Tổng cộng :</td>
+                            <td class="text-right theme-color">@String.Format("{0:0,0}", ViewBag.Tongtien)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="buttons">
+                <a href="@Url.Action("GioHang","Giohang")" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
+                <a href="checkout.html" class="btn btn-outline-dark current-btn">checkout</a>
+            </div>
+            <p class="minicart-message">Free Shipping on All Orders Over $100!</p>
+        </div>
+    </div>
+</div>

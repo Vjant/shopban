@@ -115,7 +115,7 @@
                                     </ul>
                                 </li>
                                 <li class="menu-dropdown">
-                                    <a href="@Url.Action("Blog","Home")">Blog</i></a>
+                                    <a href="@Url.Action("Blog","Home")">Blog</a>
                                 </li>
                             </ul>
                         </div>
@@ -123,11 +123,7 @@
                     <div class="col-md-2 align-self-center">
                         <div class="header-right-element d-flex justify-content-end">
                             <!--Cart info Start -->
-                            <div class="header-tools d-flex">
-                                <div class="cart-info d-flex align-self-center">
-                                    <a title="cart" href="#offcanvas-cart" class="bag offcanvas-toggle"><i class="las la-baby-carriage"></i><span class="item-total">$50.00</span><span class="item-count">3 item(s)</span></a>
-                                </div>
-                            </div>
+                            @Html.Action("Gia", "Giohang")
                         </div>
                         <!--Cart info End -->
                     </div>
@@ -138,71 +134,7 @@
     </header>
 
 
-    <div id="offcanvas-cart" class="offcanvas offcanvas-cart">
-        <div class="inner">
-            <div class="head">
-                <span class="title">Cart</span>
-                <button class="offcanvas-close">×</button>
-            </div>
-            <div class="body customScroll">
-                <ul class="minicart-product-list">
-                    <li>
-                        <a href="single-product.html" class="image"><img src="~/assets/images/product-image/1.jpg" alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Walnut Cutting Board</a>
-                            <span class="quantity-price">1 x <span class="amount">$34.86</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="single-product.html" class="image"><img src="~/assets/images/product-image/2.jpg" alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Lucky Wooden Elephant</a>
-                            <span class="quantity-price">1 x <span class="amount">$22.28</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="single-product.html" class="image"><img src="~/assets/images/product-image/3.jpg" alt="Cart product Image"></a>
-                        <div class="content">
-                            <a href="single-product.html" class="title">Fish Cut Out Set</a>
-                            <span class="quantity-price">1 x <span class="amount">$28.34</span></span>
-                            <a href="#" class="remove">×</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="foot">
-                <div class="sub-total">
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td class="text-left">Sub-Total :</td>
-                                <td class="text-right">$73.30</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Eco Tax (-2.00) :</td>
-                                <td class="text-right">$4.52</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">VAT (20%) :</td>
-                                <td class="text-right">$94.66</td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">Total :</td>
-                                <td class="text-right theme-color">$102.48</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <div class="buttons">
-                    <a href="cart.html" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
-                    <a href="checkout.html" class="btn btn-outline-dark current-btn">checkout</a>
-                </div>
-                <p class="minicart-message">Free Shipping on All Orders Over $100!</p>
-            </div>
-        </div>
-    </div>
+    @Html.Action("Index", "Giohang")
     <!-- OffCanvas Cart End -->
     <!-- OffCanvas Search Start -->
 
@@ -257,9 +189,6 @@
     </div>
     <!-- Footer Area End -->
     <!-- Modal -->
-   
-
-
     <!-- Modal end -->
     <!-- JS
     ============================================ -->
