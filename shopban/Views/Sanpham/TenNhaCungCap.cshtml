@@ -47,8 +47,7 @@
                                                         <h2><a href="@Url.Action("chitietsanpham","Sanpham",new {id = i.MaSP })" class="product-link">@i.TenSP</a></h2>
                                                         <div class="pricing-meta">
                                                             <ul>
-                                                                <li class="old-price">@i.Giaban</li>
-                                                                @*<li class="current-price">$30.00</li>*@
+                                                                <li class="current-price">@String.Format("{0:0,0}", i.Giaban)</li>
                                                             </ul>
                                                         </div>
                                                     </div>

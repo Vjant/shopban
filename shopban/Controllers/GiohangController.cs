@@ -150,6 +150,10 @@ namespace shopban.Controllers
 
             //Lay gio hang tu Session
             List<Giohang> lstGiohang = Laygiohang();
+            if (lstGiohang.Count == 0)
+            {
+                return RedirectToAction("Index", "Home");
+            }
             ViewBag.Tongsoluong = TongSoLuong();
             ViewBag.Tongtien = TongTien();
 
@@ -166,6 +170,8 @@ namespace shopban.Controllers
             ddh.Ngaydat = DateTime.Now;
             var ngaygiao = String.Format("{0:MM/dd/yyyy}", collection["Ngaygiao"]);
             ddh.Ngaygiao = DateTime.Parse(ngaygiao);
+            var ghichu = collection["Ghichu"];
+            ddh.Ghichu = ghichu;
             ddh.Tinhtranggiaohang = false;
             ddh.Dathanhtoan = false;
             data.DONDATHANGs.InsertOnSubmit(ddh);

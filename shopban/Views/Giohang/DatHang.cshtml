@@ -5,80 +5,145 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2 style="text-align:center">THÔNG TIN HÀNG HÓA</h2>
-<table align="center" border="1">
-    <tr style="text-align:center; font-weight:bold">
-        <td>  Mã sách </td>
-        <td> Tên sách </td>
-        <td> Ảnh bìa </td>
-        <td> Số lượng </td>
-        <td> Đơn giá </td>
-        <td> Thành tiền </td>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr style="text-align:center; font-weight:bold">
-            <td> @item.iMaSp </td>
-            <td> @item.sTenSp</td>
-            <td><img style="height:150px; width:150px;" src="@item.sAnhbia"></td>
-            @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iMaSp }))
-            {
-                <td>
-                    @item.iSoluong
-                </td>
-                <td>@String.Format("{0:0,0}", item.dDongia) </td>
-                <td>@String.Format("{0:0,0}", item.dThanhtien) </td>
-            }
-        </tr>
-    }
-    <tr style="font-weight: bold; text-align:right; color:red">
-        <td colspan="3"> Số lượng Sản phẩm: @ViewBag.Tongsoluong </td>
-        <td colspan="3"> Tổng tiền: @String.Format("{0:0,0}", ViewBag.Tongtien) VNĐ </td>
-    </tr>
-    <tr style="font-weight: bold; color:blue; text-align:right ">
-        <td colspan="6">
-            @Html.ActionLink("TRỞ VỀ GIỎ HÀNG", "Giohang", "GioHang")
-        </td>
-    </tr>
-</table>
+<div class="checkout-area pb-100px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="billing-info-wrap">
+                    <h3>Billing Details</h3>
+                    <div class="row">
+                        <table>
+                            @using (Html.BeginForm())
+                            {
+                                @Html.ValidationSummary(true)
+                                <div class="col-lg-12">
+                                    <div class="billing-info mb-20px">
+                                        <label>Tên Khách Hàng</label>
+                                        <input type="text" placeholder=" @kh.HoTen" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="billing-info mb-20px">
+                                        <label>Địa chỉ</label>
+                                        <input type="text" placeholder="@kh.DiachiKH" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-20px">
+                                        <label>Phone</label>
+                                        <input type="text" placeholder="@kh.DienthoaiKH" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-20px">
+                                        <label>Email Address</label>
+                                        <input type="text" placeholder="@kh.Email" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-20px">
+                                        <label>Ngày đặt</label>
+                                        <input type="text" placeholder="@DateTime.Now.ToShortDateString()" />
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-6">
+                                    <div class="billing-info mb-20px">
+                                        <label>Ngày đặt</label>
+                                        <input type="date" name="Ngaygiao" />
+                                    </div>
+                                </div>
 
-<h2 style="text-align:center">THÔNG TIN ĐẶT HÀNG</h2>
-@{
-    KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
-}
-<table align="center">
-    @using (Html.BeginForm())
-    {
-        @Html.ValidationSummary(true)
-        <tr style="height:40px">
-            <td> Họ tên khách hàng:</td>
-            <td style="font-weight:bold">  @kh.HoTen </td>
-        </tr>
-        <tr style="height:40px">
-            <td> Địa chỉ:</td>
-            <td style="font-weight:bold">  @kh.DiachiKH </td>
-        </tr>
-        <tr style="height:40px">
-            <td> Địện thoại:</td>
-            <td style="font-weight:bold">  @kh.DienthoaiKH </td>
-        </tr>
-
-        <tr style="height:40px">
-            <td> Ngày đặt:</td>
-            <td style="font-weight:bold"> @DateTime.Now.ToShortDateString() </td>
-        </tr>
-        <tr style="height:40px">
-            <td> Ngày giao hàng:</td>
-            <td style="font-weight:bold">
-                <input type="date" name="Ngaygiao" />
-            </td>
-        </tr>
-
-        <tr style="height:40px">
-            <td></td>
-            <td>
-                <input type="Submit" value="ĐỒNG Ý ĐẶT HÀNG" />
-            </td>
-        </tr>
-    }
-</table>
+                                <div class="additional-info-wrap">
+                                    <div class="additional-info">
+                                        <label>Ghi chú</label>
+                                        <textarea placeholder="Notes about your order, e.g. special notes for delivery. " name="Ghichu"></textarea>
+                                    </div>
+                                </div>
+                                <div>
+                                    <input style="border:solid #000; padding:15px;" type="Submit" value="ĐỒNG Ý ĐẶT HÀNG" />
+                                </div>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-md-30px mt-lm-30px ">
+                <div class="your-order-area">
+                    <h3>Your order</h3>
+                    <div class="your-order-wrap gray-bg-4">
+                        <div class="your-order-product-info">
+                            <div class="your-order-top">
+                                <ul>
+                                    <li>Product</li>
+                                    <li>Total</li>
+                                </ul>
+                            </div>
+                            <div class="your-order-middle">
+                                @foreach (var item in Model)
+                                {
+                                    using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iMaSp }))
+                                    {
+                                        <ul>
+                                            <li><span class="order-middle-left">@item.sTenSp X @item.iSoluong</span> <span class="order-price">@String.Format("{0:0,0}", item.dDongia) </span></li>
+                                            
+                                        </ul>
+                                       
+                                    }
+                                 
+                                }
+                            </div>
+                            <div class="your-order-bottom">
+                                <ul>
+                                    <li class="your-order-shipping">Shipping</li>
+                                    <li>Free shipping</li>
+                                </ul>
+                            </div>
+                            <div class="your-order-total">
+                                <ul>
+                                    <li class="order-total">TỔNG TIỀN</li>
+                                    <li>@String.Format("{0:0,0}", ViewBag.Tongtien)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="payment-method">
+                            <div class="payment-accordion element-mrg">
+                                <div class="panel-group" id="accordion">
+                                    
+                                    <div class="panel payment-accordion">
+                                        <div class="panel-heading" id="method-two">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method2">
+                                                    Thanh toán qua thẻ ngân hàng
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="method2" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p>Cung cấp thông tin ngân hàng</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel payment-accordion">
+                                        <div class="panel-heading" id="method-three">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#method3">
+                                                    Thanh Toán COD
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="method3" class="panel-collapse collapse">
+                                            <div class="panel-body">
+                                                <p></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

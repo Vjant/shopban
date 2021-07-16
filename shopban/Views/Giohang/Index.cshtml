@@ -14,7 +14,7 @@
                         <a href="@Url.Action("chitietsanpham","Sanpham",new {id = @item.iMaSp })" class="image"><img src="@item.sAnhbia" alt="Cart product Image"></a>
                         <div class="content">
                             <a href="@Url.Action("chitietsanpham","Sanpham",new {id = @item.iMaSp })" class="title">@item.sTenSp</a>
-                            <span class="quantity-price">@item.iSoluong X <span class="amount">@item.dDongia</span></span>
+                            <span class="quantity-price">@item.iSoluong X <span class="amount">@String.Format("{0:0,0}", @item.dDongia)</span></span>
                             <a href="#" class="remove">×</a>
                         </div>
                     </li>
@@ -34,8 +34,8 @@
                 </table>
             </div>
             <div class="buttons">
-                <a href="@Url.Action("GioHang","Giohang")" class="btn btn-dark btn-hover-primary mb-30px">view cart</a>
-                <a href="checkout.html" class="btn btn-outline-dark current-btn">checkout</a>
+                <a href="@Url.Action("GioHang","Giohang")" class="btn btn-dark btn-hover-primary mb-30px">Giỏ Hàng</a>
+                <a href="@Url.Action("DatHang","Giohang")" class="btn btn-outline-dark current-btn">Thanh Toán</a>
             </div>
             <p class="minicart-message">Miễn phí đơn hàng với hóa đơn trên 200</p>
         </div>
