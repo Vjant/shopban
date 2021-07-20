@@ -90,6 +90,19 @@ CREATE TABLE CHITIETDONTHANG
 	CONSTRAINT FK_SanPham FOREIGN KEY(MaSP) REFERENCES SANPHAM(MaSP)
 )
 GO
+
+CREATE TABLE ADMIN
+(
+	UserAdmin varchar(30) primary key,
+	PassAdmin varchar(30) not null,
+	HoTen nvarchar(50)
+)
+GO
+INSERT INTO ADMIN(UserAdmin,PassAdmin,HoTen) VALUES ('admin1','8765247',N'Nguyễn Minh Hùng')
+INSERT INTO ADMIN(UserAdmin,PassAdmin,HoTen) VALUES ('admin2','123456',N'Bùi Duy Đạt')
+INSERT INTO ADMIN(UserAdmin,PassAdmin,HoTen) VALUES ('admin3','456789',N'Nguyễn Hà Minh Khang')
+INSERT INTO ADMIN(UserAdmin,PassAdmin,HoTen) VALUES ('admin4','123789',N'Trương Hữu Hậu')
+
 INSERT DANHMUC(TenDanhMuc) VALUES (N'Thức ăn cho mèo')
 INSERT DANHMUC(TenDanhMuc) VALUES (N'Thức ăn cho chó')
 INSERT DANHMUC(TenDanhMuc) VALUES (N'Thức ăn cho thú cưng khác')
