@@ -24,14 +24,15 @@
 </p>
 <table class="table" border="1">
     <tr>
-        <th style="width:200px"> Tên sản phẩm</th>
-        <th style="width:100px"> Giá bán</th>
-        <th style="width:300px"> Mô tả</th>
-        <th style="width:120px"> Ảnh bìa</th>
-        <th style="width:150px"> Ngày cập nhật</th>
-        <th style="width:120px"> Số lượng tồn</th>
-        <th style="width:120px"> Mã loại</th>
-        <th style="width:100px"> Tên nhà cung cấp</th>
+        <th > Tên sản phẩm</th>
+        <th> Giá bán</th>
+        <th> Mô tả</th>
+        <th> Ảnh bìa</th>
+        <th > Ngày cập nhật</th>
+        <th> Số lượng tồn</th>
+        <th> Mã loại</th>
+        <th> Tên nhà cung cấp</th>
+        <th style="width:140px"> Ghi chú</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -55,7 +56,7 @@
                 @Html.DisplayFor(modelItem => item.Soluongton)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.MaL)
+                @Html.DisplayFor(modelItem => item.LOAI.TenLoai)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.NHACUNGCAP.TenNCC)

@@ -40,7 +40,7 @@
         </dt>
 
         <dd>
-            <img src="@Url.Content("~/assets/images/sanpham" + Model.Anhbia)" width="120px" />
+            <img src="@Url.Content(@Model.Anhbia)" width="120px" />
         </dd>
 
         <dt>
@@ -60,19 +60,19 @@
         </dd>
 
         <dt>
-            Mã loại:
+            Tên loại:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaL)
+            @Html.DisplayFor(model => model.LOAI.TenLoai)
         </dd>
 
         <dt>
-            Mã nhà cung cấp:
+            Tên nhà cung cấp:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.MaNCC)
+            @Html.DisplayFor(model => model.NHACUNGCAP.TenNCC)
         </dd>
     </dl>
 </div>

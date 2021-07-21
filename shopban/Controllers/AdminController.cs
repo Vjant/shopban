@@ -78,6 +78,7 @@ namespace shopban.Controllers
         }
 
         [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Themmoisanpham(SANPHAM sanpham, HttpPostedFileBase fileUpload)
         {
             ViewBag.MaL = new SelectList(data.LOAIs.ToList().OrderBy(n => n.TenLoai), "MaL", "TenLoai", sanpham.MaL);
@@ -141,7 +142,7 @@ namespace shopban.Controllers
         [HttpPost, ActionName("Xoasanpham")]
         public ActionResult Xacnhanxoa(int id)
         {
-            SANPHAM sanpham = data.SANPHAMs.SingleOrDefault(n => n.MaL == id);
+            SANPHAM sanpham = data.SANPHAMs.Select(p => p).Where(p => p.MaSP == id).FirstOrDefault();
             ViewBag.MaL = sanpham.MaL;
             if (sanpham == null)
             {
@@ -166,7 +167,8 @@ namespace shopban.Controllers
             ViewBag.MaNCC = new SelectList(data.NHACUNGCAPs.ToList().OrderBy(n => n.TenNCC), "MaNCC", "TenNCC", sanpham.MaNCC);
             return View(sanpham);
         }
-
+        [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Suasanpham(SANPHAM sanpham, HttpPostedFileBase fileUpload)
         {
             ViewBag.MaL = new SelectList(data.LOAIs.ToList().OrderBy(n => n.TenLoai), "MaL", "TenLoai", sanpham.MaL);
