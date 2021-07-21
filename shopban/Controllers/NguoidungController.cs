@@ -104,7 +104,6 @@ namespace shopban.Controllers
                 {
                     //ViewBag.Thongbao = "Chúc mừng đăng nhập thành công";
                     Session["Taikhoan"] = kh;
-                    Session["Name"] = data.KHACHHANGs.FirstOrDefault().HoTen;
                     return RedirectToAction("Index", "Home");
                 }
                 else
@@ -115,11 +114,6 @@ namespace shopban.Controllers
         public ActionResult ThongTinVeChungToi()
         {
             return View();
-        }
-        public ActionResult Dangxuat()
-        {
-            Session.Clear();
-            return RedirectToAction("Index", "Home");
         }
     }
 }
