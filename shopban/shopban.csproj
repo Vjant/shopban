@@ -570,6 +570,7 @@
     <Content Include="Views\Nhacungcap\Index.cshtml" />
     <Content Include="Views\Nhacungcap\Details.cshtml" />
     <Content Include="Views\Admin\Suasanpham.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

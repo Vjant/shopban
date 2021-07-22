@@ -9,9 +9,22 @@ namespace shopban.Controllers
 {
     public class HomeController : Controller
     {
+        ShopDataDataContext data = new ShopDataDataContext();
         public ActionResult Index()
         {
             return View();
+        }
+        public ActionResult Search(String search)
+        {
+            var sanpham = from sp in data.SANPHAMs // lấy toàn bộ liên kết
+                        select sp;
+
+            if (!String.IsNullOrEmpty(search)) // kiểm tra chuỗi tìm kiếm có rỗng/null hay không
+            {
+                sanpham = sanpham.Where(s => s.TenSP.Contains(search)); //lọc theo chuỗi tìm kiếm
+            }
+
+            return View(sanpham); //trả về kết quả
         }
         public ActionResult ThongTinCuaHang()
         {
@@ -21,7 +34,7 @@ namespace shopban.Controllers
         {
             return View();
         }
-        ShopDataDataContext data = new ShopDataDataContext();
+        
 
         public PartialViewResult DanhMuc()
         {
