@@ -1,9 +1,7 @@
 ﻿@model shopban.Models.SANPHAM
 
-@{
-    ViewBag.Title = "Chitietsanpham";
-    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
-}
+@{ ViewBag.Title = "Chitietsanpham";
+                Layout = "~/Views/Shared/_LayoutAdmin.cshtml"; }
 
 <h2>THÔNG TIN CHI TIẾT SẢN PHẨM</h2>
 
@@ -39,7 +37,7 @@
         </dt>
 
         <dd>
-            <img src="@Url.Content(@Model.Anhbia) " style="width: 150px; height: 150px"/>
+            <img src="@Url.Content(@Model.Anhbia) " style="width: 150px; height: 150px" />
         </dd>
 
         <dt>

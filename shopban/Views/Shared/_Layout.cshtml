@@ -60,13 +60,21 @@
                                         </div>
                                     </div>
                                     <div class="dropdown float-right">
-                                        <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="las la-user-circle"></i> <span>Cài đặt người dùng</span> <i class="las la-angle-down"></i></button>
+                                        @if (Session["Taikhoan"] != null)
+                                        {
+                                    <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="las la-user-circle"></i> <span>@Session["Name"]</span> <i class="las la-angle-down"></i></button>
+                                                    <ul class="dropdown-menu height-122px" aria-labelledby="dropdownMenuButton" style="width:170px">
+                                                        <li><a href="my-account.html">Thông tin tài khoản</a></li>
+                                                        <li><a href="@Url.Action("Dangxuat","Nguoidung")">Đăng Xuất</a></li>
+                                                    </ul> }
+                                                                else
+                                                                {
+                                                    <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="las la-user-circle"></i> <span>Thông tin người dùng</span> <i class="las la-angle-down"></i></button>
+                                                                    <ul class="dropdown-menu height-122px" aria-labelledby="dropdownMenuButton" style="width:170px">
+                                                                        <li><a href="@Url.Action("Dangky","Nguoidung")">Đăng ký</a></li>
+                                                                        <li><a href="@Url.Action("Dangnhap","Nguoidung")">Đăng nhập</a></li>
+                                                                    </ul>}
 
-                                        <ul class="dropdown-menu height-122px" aria-labelledby="dropdownMenuButton">
-                                            <li><a href="my-account.html">Thông tin tài khoản</a></li>
-                                            <li><a href="@Url.Action("Dangky","Nguoidung")">Đăng ký</a></li>
-                                            <li><a href="@Url.Action("Dangnhap","Nguoidung")">Đăng nhập</a></li>
-                                        </ul>
                                     </div>
                                     <div class="search-element-wrap">
                                         <a href="javascript:void(0)"><i class="las la-search"></i></a>

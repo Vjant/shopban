@@ -57,7 +57,7 @@ namespace shopban.Models
     #endregion
 		
 		public ShopDataDataContext() : 
-				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["ShopConnectionString1"].ConnectionString, mappingSource)
+				base(global::System.Configuration.ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
