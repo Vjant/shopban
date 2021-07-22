@@ -234,6 +234,8 @@
     <Content Include="assets\images\favicon\favicon.png" />
     <Content Include="assets\images\flag\1.png" />
     <Content Include="assets\images\flag\2.png" />
+    <Content Include="assets\images\flag\3.png" />
+    <Content Include="assets\images\flag\4.png" />
     <Content Include="assets\images\icons\payment.png" />
     <Content Include="assets\images\icons\policy-2.png" />
     <Content Include="assets\images\icons\policy-3.png" />
