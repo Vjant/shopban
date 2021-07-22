@@ -167,17 +167,17 @@ namespace shopban.Controllers
             ViewBag.MaNCC = new SelectList(data.NHACUNGCAPs.ToList().OrderBy(n => n.TenNCC), "MaNCC", "TenNCC", sanpham.MaNCC);
             return View(sanpham);
         }
-        [HttpPost]
+        [HttpPost, ActionName("Suasanpham")]
         [ValidateInput(false)]
         public ActionResult Suasanpham(SANPHAM sanpham, HttpPostedFileBase fileUpload)
         {
-            ViewBag.MaL = new SelectList(data.LOAIs.ToList().OrderBy(n => n.TenLoai), "MaL", "TenLoai", sanpham.MaL);
-            ViewBag.MaNCC = new SelectList(data.NHACUNGCAPs.ToList().OrderBy(n => n.TenNCC), "MaNCC", "TenNCC", sanpham.MaNCC);
+            ViewBag.MaL = new SelectList(data.LOAIs.ToList().OrderBy(n => n.TenLoai), "MaL", "TenLoai");
+            ViewBag.MaNCC = new SelectList(data.NHACUNGCAPs.ToList().OrderBy(n => n.TenNCC), "MaNCC", "TenNCC");
 
             if (fileUpload == null)
             {
                 ViewBag.Thongbao = "Vui lòng chọn ảnh bìa";
-                return View();
+                return View(sanpham);
             }
             else
             {
@@ -187,17 +187,27 @@ namespace shopban.Controllers
                     var path = Path.Combine(Server.MapPath("~/assets/images/sanpham"), fileName);
 
                     if (System.IO.File.Exists(path))
-                        ViewBag.Thongbao = "Hình ảnh đã tồn tại";
+                    {
+                        ViewBag.Thongbao = "Hình ảnh đã tồn tại !";
+                    }
                     else
                     {
                         fileUpload.SaveAs(path);
                     }
 
                     sanpham.Anhbia = fileName;
-                    UpdateModel(sanpham);
+                    SANPHAM sp = data.SANPHAMs.SingleOrDefault(s => s.MaSP == sanpham.MaSP);
+                    sp.TenSP = sanpham.TenSP;
+                    sp.Giaban = sanpham.Giaban;
+                    sp.Mota = sanpham.Mota;
+                    sp.Anhbia = sanpham.Anhbia;
+                    sp.Ngaycapnhat = sp.Ngaycapnhat;
+                    sp.Soluongton = sp.Soluongton;
+                    sp.MaNCC = sanpham.MaNCC;
+                    sp.MaL = sanpham.MaL;
+                    
                     data.SubmitChanges();
                 }
-
                 return RedirectToAction("SanPham");
             }
         }
