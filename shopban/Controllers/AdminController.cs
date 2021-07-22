@@ -95,7 +95,7 @@ namespace shopban.Controllers
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
 
-                    var path = Path.Combine(Server.MapPath("~/assets/images/sanpham"), fileName);
+                    var path = Path.Combine(Server.MapPath("/assets/images/sanpham"), fileName);
                     if (System.IO.File.Exists(path))
                         ViewBag.Thongbao = "Hình ảnh đã tồn tại";
                     else
@@ -103,13 +103,13 @@ namespace shopban.Controllers
                         fileUpload.SaveAs(path);
                     }
 
-                    sanpham.Anhbia = fileName;
+                    sanpham.Anhbia = "/assets/images/sanpham/"+fileName;
 
                     data.SANPHAMs.InsertOnSubmit(sanpham);
                     data.SubmitChanges();
                 }
 
-                return RedirectToAction("SanPham");
+                return RedirectToAction("SanPham","Admin");
             }
         }
         
