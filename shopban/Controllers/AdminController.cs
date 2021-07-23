@@ -184,7 +184,7 @@ namespace shopban.Controllers
                 if (ModelState.IsValid)
                 {
                     var fileName = Path.GetFileName(fileUpload.FileName);
-                    var path = Path.Combine(Server.MapPath("~/assets/images/sanpham"), fileName);
+                    var path = Path.Combine(Server.MapPath("/assets/images/sanpham/"), fileName);
 
                     if (System.IO.File.Exists(path))
                     {
@@ -200,7 +200,7 @@ namespace shopban.Controllers
                     sp.TenSP = sanpham.TenSP;
                     sp.Giaban = sanpham.Giaban;
                     sp.Mota = sanpham.Mota;
-                    sp.Anhbia = sanpham.Anhbia;
+                    sp.Anhbia = "/assets/images/sanpham/" + sanpham.Anhbia;
                     sp.Ngaycapnhat = sp.Ngaycapnhat;
                     sp.Soluongton = sp.Soluongton;
                     sp.MaNCC = sanpham.MaNCC;
