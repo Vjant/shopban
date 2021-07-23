@@ -97,8 +97,8 @@
                                         <div class="search-element-wrap">
                                             <a href="javascript:void(0)"><i class="las la-search"></i></a>
                                             <div class="search-element">
-                                                <form>
-                                                    @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+                                                <form action="@Url.Action("Search", "Home")">
+                                                    @using (Html.BeginForm(FormMethod.Post))
                                                     {
                                                         <input type="text" placeholder="Tìm kiếm thông tin bạn cần .." name="search" />
                                                         <button type="submit"><i class="las la-search"></i></button>
