@@ -8,7 +8,7 @@
 <h2>QUẢN LÝ NHÀ CUNG CẤP</h2>
 
 <p>
-    @Html.ActionLink("Thêm mới nhà cung cấp", "Create")
+    @Html.ActionLink("Thêm mới nhà cung cấp", "Themmoinhacungcap")
 </p>
 <table class="table">
     <tr>
@@ -36,9 +36,9 @@
             @Html.DisplayFor(modelItem => item.DienThoai)
         </td>
         <td>
-            @Html.ActionLink("Sửa", "Edit", new { id=item.MaNCC }) |
+            @Html.ActionLink("Sửa", "SuaNhacc", new { id=item.MaNCC }) |
             @Html.ActionLink("Chi tiết", "Details", new { id=item.MaNCC }) |
-            @Html.ActionLink("Xóa", "Delete", new { id=item.MaNCC })
+            @Html.ActionLink("Xóa", "XoaNcc", new { id=item.MaNCC })
         </td>
     </tr>
 }

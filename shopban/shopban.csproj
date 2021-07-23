@@ -573,6 +573,9 @@
     <Content Include="Views\Nhacungcap\Details.cshtml" />
     <Content Include="Views\Admin\Suasanpham.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
+    <Content Include="Views\Nhacungcap\Themmoinhacungcap.cshtml" />
+    <Content Include="Views\Nhacungcap\XoaNcc.cshtml" />
+    <Content Include="Views\Nhacungcap\SuaNhacc.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

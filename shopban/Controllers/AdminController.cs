@@ -68,12 +68,11 @@ namespace shopban.Controllers
             }
             return View();
         }
-
         [HttpGet]
         public ActionResult Themmoisanpham()
         {
             ViewBag.MaL = new SelectList(data.LOAIs.ToList().OrderBy(n => n.TenLoai), "MaL", "TenLoai");
-            ViewBag.MaNCC = new SelectList(data.NHACUNGCAPs.ToList().OrderBy(n => n.TenNCC), "MaNCC","TenNCC");
+            ViewBag.MaNCC = new SelectList(data.NHACUNGCAPs.ToList().OrderBy(n => n.TenNCC), "MaNCC", "TenNCC");
             return View();
         }
 
