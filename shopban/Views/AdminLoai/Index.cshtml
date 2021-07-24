@@ -1,0 +1,46 @@
+﻿@model IEnumerable<shopban.Models.LOAI>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Themmoil")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenLoai)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaL)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DANHMUC.TenDanhMuc)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenLoai)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Sual", new { id = item.MaL }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaL }) |
+        @Html.ActionLink("Delete", "Xoal", new { id = item.MaL })
+    </td>
+</tr>
+}
+
+</table>

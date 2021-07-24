@@ -130,6 +130,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\AdminDanhMucController.cs" />
+    <Compile Include="Controllers\AdminLoaiController.cs" />
     <Compile Include="Controllers\GiohangController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NguoidungController.cs" />
@@ -576,6 +578,16 @@
     <Content Include="Views\Nhacungcap\Themmoinhacungcap.cshtml" />
     <Content Include="Views\Nhacungcap\XoaNcc.cshtml" />
     <Content Include="Views\Nhacungcap\SuaNhacc.cshtml" />
+    <Content Include="Views\AdminDanhMuc\Index.cshtml" />
+    <Content Include="Views\AdminDanhMuc\Details.cshtml" />
+    <Content Include="Views\AdminDanhMuc\Xoadm.cshtml" />
+    <Content Include="Views\AdminDanhMuc\SuaDm.cshtml" />
+    <Content Include="Views\AdminLoai\Index.cshtml" />
+    <Content Include="Views\AdminDanhMuc\Themmoidanhmuc.cshtml" />
+    <Content Include="Views\AdminLoai\Themmoil.cshtml" />
+    <Content Include="Views\AdminLoai\Details.cshtml" />
+    <Content Include="Views\AdminLoai\Sual.cshtml" />
+    <Content Include="Views\AdminLoai\Xoal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

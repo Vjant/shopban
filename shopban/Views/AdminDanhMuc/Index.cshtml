@@ -1,0 +1,40 @@
+﻿@model IEnumerable<shopban.Models.DANHMUC>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Themmoidanhmuc")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaDM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenDanhMuc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.MaDM)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TenDanhMuc)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "SuaDm", new { id = item.MaDM }) |
+        @Html.ActionLink("Details", "Details", new { id = item.MaDM }) |
+        @Html.ActionLink("Delete", "Xoadm", new { id = item.MaDM })
+    </td>
+</tr>
+}
+
+</table>
