@@ -7,92 +7,66 @@
 <html lang="en">
 
 <head>
-
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hệ thống quản trị</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>Đăng Nhập - Hệ Thống Quản Trị</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-    <link rel="stylesheet" href="~/assetsAdmin/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="~/assetsAdmin/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="~/assetsAdmin/css/form-elements.css">
-    <link rel="stylesheet" href="~/assetsAdmin/css/style.css">
+    <link rel="shortcut icon" href="~/assetsAdmin/img/favicon.png">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="~/assetsAdmin/ico/favicon.png">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="~/assetsAdmin/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="~/assetsAdmin/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="~/assetsAdmin/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="~/assetsAdmin/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="stylesheet" href="~/assetsAdmin/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="~/assetsAdmin/plugins/fontawesome/css/all.min.css">
 
+    <link rel="stylesheet" href="~/assetsAdmin/plugins/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="~/assetsAdmin/css/admin.css">
 </head>
-
 <body>
-
-    <!-- Top content -->
-    <div class="top-content">
-
-        <div class="inner-bg">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-sm-offset-3 form-box">
-                        <div class="form-top">
-                            <div class="form-top-left">
-                                <h4>ĐĂNG NHẬP HỆ THỐNG QUẢN TRỊ</h4>
-
-                            </div>
-                            <div class="form-top-right">
-                                <i class="fa fa-key"></i>
+    <div class="main-wrapper">
+        <div class="login-page">
+            <div class="login-body container">
+                <div class="loginbox">
+                    <div class="login-right-wrap">
+                        <div class="account-header">
+                            <div class="account-logo text-center mb-4">
+                                <a href="index.html">
+                                    <img src="~/assets/images/logo/logo.png" alt="" class="img-fluid">
+                                </a>
                             </div>
                         </div>
-                        <div class="form-bottom">
-                            @using (Html.BeginForm())
-                            {
-                                <div class="login-form">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-username">Tài khoản:</label>
-                                        <input type="text" name="txtUser" placeholder="Tài khoản..." class="form-username form-control" id="form-username">
-                                        @ViewData["Loi1"]
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="sr-only" for="form-password">Mật khẩu:</label>
-                                        <input type="password" name="txtPass" placeholder="Mật khẩu..." class="form-password form-control" id="form-password">
-                                        @ViewData["Loi2"]
-                                    </div>
-                                    <div style="color:red; font-style:italic">
-                                        @ViewBag.Thongbao
-                                    </div>
-                                    <button type="submit" class="btn"> ĐĂNG NHẬP</button>
-                                </div>
-                            }
+                        <div class="login-header">
+                            <h3>Đăng nhập <span>Hệ thống</span></h3>
+                            <p class="text-muted">Truy cập vào hệ thống quản trị</p>
                         </div>
+                        @using (Html.BeginForm())
+                        {
+                            <div class="form-group">
+                                <label class="control-label">Tài khoản</label>
+                                <input class="form-control" type="text" name="txtUser" placeholder="Nhập tài khoản...">
+                                @ViewData["Loi1"]
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="control-label">Mật khẩu</label>
+                                <input class="form-control" type="password" name="txtPass" placeholder="Nhập mật khẩu...">
+                                @ViewData["Loi2"]
+                            </div>
+                            <div style="color:red; font-style:italic">
+                                @ViewBag.Thongbao
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-primary btn-block account-btn" type="submit">Login</button>
+                            </div>
+                        }
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 
+    <script src="~/assetsAdmin/js/jquery-3.5.0.min.js"></script>
 
-    <!-- Javascript -->
-    <script src="~/assetsAdmin/js/jquery-1.11.1.min.js"></script>
-    <script src="~/assetsAdmin/bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/assetsAdmin/js/jquery.backstretch.min.js"></script>
-    <script src="~/assetsAdmin/js/scripts.js"></script>
+    <script src="~/assetsAdmin/js/popper.min.js"></script>
+    <script src="~/assetsAdmin/plugins/bootstrap/js/bootstrap.min.js"></script>
 
-    <!--[if lt IE 10]>
-        <script src="~/assetsAdmin/js/placeholder.js"></script>
-    <![endif]-->
-
+    <script src="~/assetsAdmin/js/admin.js"></script>
 </body>
-
 </html>
