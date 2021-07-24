@@ -5,20 +5,22 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Quản lý danh mục</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Themmoidanhmuc")
+    @Html.ActionLink("Thêm mới danh mục", "Themmoidanhmuc")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.MaDM)
+            Mã danh mục
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.TenDanhMuc)
+            Tên danh mục
         </th>
-        <th></th>
+        <th>
+            Chức năng
+        </th>
     </tr>
 
 @foreach (var item in Model) {
@@ -30,11 +32,10 @@
         @Html.DisplayFor(modelItem => item.TenDanhMuc)
     </td>
     <td>
-        @Html.ActionLink("Edit", "SuaDm", new { id = item.MaDM }) |
-        @Html.ActionLink("Details", "Details", new { id = item.MaDM }) |
-        @Html.ActionLink("Delete", "Xoadm", new { id = item.MaDM })
+        @Html.ActionLink("Sửa", "SuaDm", new { id = item.MaDM }) |
+        @Html.ActionLink("Chi tiết", "Details", new { id = item.MaDM }) |
+        @Html.ActionLink("Xóa", "Xoadm", new { id = item.MaDM })
     </td>
 </tr>
 }
-
 </table>
